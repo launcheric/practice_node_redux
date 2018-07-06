@@ -2,7 +2,9 @@
 import React from "react";
 import { connect } from 'react-redux'
 
-const SurveyFormReview = ({ onCancel }) => {
+const SurveyFormReview = ({ onCancel, formValues }) => {
+
+
   return (
     <div>
       <h5>Please confirm your entries</h5>
