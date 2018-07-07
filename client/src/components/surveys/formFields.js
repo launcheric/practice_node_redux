@@ -15,9 +15,8 @@ export default [
     noValueError: "You must provide a body!"
   },
   {
-    label: "Recipient",
-    name: "emails",
+    label: "Recipient List",
+    name: "recipients",
     noValueError: "You must provide a recipient!"
   }
-]
-
+];

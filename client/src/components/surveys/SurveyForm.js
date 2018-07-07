@@ -5,8 +5,7 @@ import { reduxForm, Field } from "redux-form";
 import { Link } from "react-router-dom";
 import SurveyField from "./SurveyField";
 import validateEmails from "../../utils/validateEmails";
-import formFields from './formFields'
-
+import formFields from "./formFields";
 
 class SurveyForm extends Component {
   renderFields() {
@@ -43,7 +42,7 @@ class SurveyForm extends Component {
 function validate(values) {
   const errors = {};
 
-  errors.emails = validateEmails(values.emails || "");
+  errors.recipients = validateEmails(values.recipients || "");
 
   _.each(formFields, ({ name, noValueError }) => {
     if (!values[name]) {
