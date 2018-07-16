@@ -1,5 +1,5 @@
 const _ = require("lodash");
-const Path = require("path-parser");
+const Path = require("path-parser").default;
 const { URL } = require("url");
 const mongoose = require("mongoose");
 const requireLogin = require("../middlewares/requireLogin");
@@ -12,14 +12,14 @@ const Survey = mongoose.model("surveys");
 module.exports = app => {
   app.get("/api/surveys/thanks", (req, res) => {
     res.send("Thanks for voting!");
-    git;
   });
 
   app.post("/api/surveys/webhooks", (req, res) => {
     const events = _.map(req.body, event => {
       const pathname = new URL(event.url).pathname;
-      const p = new Path("/api/surveys/:surveyId/:choice");
+      const p = new Path('/api/surveys/:surveyId/:choice');
       console.log(p.test(pathname));
+
     });
   });
 
